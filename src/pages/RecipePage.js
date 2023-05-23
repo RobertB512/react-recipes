@@ -1,7 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+
 
 export default function RecipePage() {
+  const {chosenRecipe} = useParams()
 	return (
 		<section className="recipe-page">
 			<header>
@@ -9,7 +11,7 @@ export default function RecipePage() {
 					Back
 				</Link>
 
-				<h2 className="recipe-page-heading">Recipe</h2>
+				<h2 className="recipe-page-heading">{chosenRecipe}</h2>
 			</header>
 
 			<div className="recipe-img-wrapper">

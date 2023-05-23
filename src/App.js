@@ -10,7 +10,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" Component={Home} />
-				<Route path="/:recipe" Component={RecipePage} />
+				<Route path="/:chosenRecipe" Component={RecipePage} />
 			</Routes>
 		</BrowserRouter>
 	);

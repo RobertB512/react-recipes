@@ -1,9 +1,9 @@
 import React from "react";
-import {Link, useParams} from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
-
-export default function RecipePage() {
-  const {chosenRecipe} = useParams()
+export default function RecipePage(props) {
+	const { chosenRecipe } = useParams();
+	const { state } = useLocation();
 	return (
 		<section className="recipe-page">
 			<header>
@@ -23,7 +23,11 @@ export default function RecipePage() {
 					<h3 className="recipe-info-heading">Ingredients</h3>
 
 					<div className="ingredients-wrapper">
-						<ul></ul>
+						<ul>
+							{state.ingredients.split("|").map(ingredient => (
+								<li>{ingredient}</li>
+							))}
+						</ul>
 					</div>
 				</section>
 
@@ -31,7 +35,11 @@ export default function RecipePage() {
 					<h3 className="recipe-info-heading">Instructions</h3>
 
 					<div className="instructions-wrapper">
-						<ol></ol>
+						<ol>
+							{state.instructions
+								.split(".")
+								.map(step => (step ? <li>{step}</li> : null))}
+						</ol>
 					</div>
 				</section>
 			</div>

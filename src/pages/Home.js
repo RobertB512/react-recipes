@@ -25,12 +25,14 @@ export default function Home() {
 				fetch(url, options)
 					.then(response => {
 						try {
-              if (response.ok) {
-                return response.json();
+							if (response.ok) {
+								return response.json();
+							} else {
+                console.log("Error, you might need an api key. Make sure the api key, url, and headers are valid.")
               }
-            } catch (error){
-              console.log("May be 403 (forbidden). Did you put in api key?")
-            }
+						} catch (error) {
+							console.log("May be 403 (forbidden). Did you put in api key?");
+						}
 					})
 					.then(recipes => setRecipeResults(recipes))
 					.catch(error => console.log("could not fetch data"));

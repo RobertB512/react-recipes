@@ -14,21 +14,29 @@ export default function Home() {
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": `{{put api-key here}}`,
+				"X-RapidAPI-Key": `{{put your api-key here}}`,
 				"X-RapidAPI-Host": "recipe-by-api-ninjas.p.rapidapi.com",
 				"Cache-Control": "no-cache",
 			},
 		};
 
 		if (searchedRecipe) {
-			fetch(url, options)
-				.then(response => {
-					if (response.ok) {
-						return response.json();
-					}
-				})
-				.then(recipes => setRecipeResults(recipes))
-				.catch(error => console.log(error));
+			try {
+				fetch(url, options)
+					.then(response => {
+						try {
+              if (response.ok) {
+                return response.json();
+              }
+            } catch (error){
+              console.log("May be 403 (forbidden). Did you put in api key?")
+            }
+					})
+					.then(recipes => setRecipeResults(recipes))
+					.catch(error => console.log("could not fetch data"));
+			} catch (error) {
+				console.log("Error: did you put in an api key?");
+			}
 		}
 	}, [searchedRecipe]);
 
@@ -46,20 +54,25 @@ export default function Home() {
 
 			<section className="results-container">
 				<h2 className="results-heading">
-					{recipeResults.length > 0 ? recipeResults.length : "no"} results
+					{recipeResults && recipeResults.length > 0
+						? recipeResults.length
+						: "no"}{" "}
+					results
 				</h2>
 				<article className="results-wrapper">
-					{recipeResults.map((recipe, index) => (
-						<Link
-							key={index}
-							to={recipe.title}
-							state={{
-								instructions: recipe.instructions,
-								ingredients: recipe.ingredients,
-							}}>
-							<RecipeResult title={recipe.title} />
-						</Link>
-					))}
+					{recipeResults
+						? recipeResults.map((recipe, index) => (
+								<Link
+									key={index}
+									to={recipe.title}
+									state={{
+										instructions: recipe.instructions,
+										ingredients: recipe.ingredients,
+									}}>
+									<RecipeResult title={recipe.title} />
+								</Link>
+						  ))
+						: null}
 				</article>
 			</section>
 		</section>

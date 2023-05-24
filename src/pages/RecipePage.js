@@ -24,8 +24,8 @@ export default function RecipePage(props) {
 
 					<div className="ingredients-wrapper">
 						<ul>
-							{state.ingredients.split("|").map(ingredient => (
-								<li>{ingredient}</li>
+							{state.ingredients.split("|").map((ingredient, index) => (
+								<li key={index}>{ingredient}</li>
 							))}
 						</ul>
 					</div>
@@ -38,7 +38,7 @@ export default function RecipePage(props) {
 						<ol>
 							{state.instructions
 								.split(".")
-								.map(step => (step ? <li>{step}</li> : null))}
+								.map((step, index) => (step ? <li key={index}>{step}</li> : null))}
 						</ol>
 					</div>
 				</section>

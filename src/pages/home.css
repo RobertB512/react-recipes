@@ -1,0 +1,25 @@
+h1 {
+  font-size: clamp(3rem, 5rem, 7rem);
+  font-weight: 700;
+  text-align: center;
+}
+.results-heading {
+  font-size: 2rem;
+}
+
+.results-container {
+  padding: 2rem;
+}
+.results-heading {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #960014;
+
+}
+.results-wrapper {
+  --result-columns: 1; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 10px;
+}

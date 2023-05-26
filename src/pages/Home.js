@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./home.css"
 
 import Search from "../components/Search";
 import RecipeResult from "../components/RecipeResult";
@@ -14,7 +15,7 @@ export default function Home() {
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": `{{put your api-key here}}`,
+				"X-RapidAPI-Key": `{{api-key}}`,
 				"X-RapidAPI-Host": "recipe-by-api-ninjas.p.rapidapi.com",
 				"Cache-Control": "no-cache",
 			},
@@ -64,16 +65,16 @@ export default function Home() {
 				<article className="results-wrapper">
 					{recipeResults
 						? recipeResults.map((recipe, index) => (
-								<Link
+								<Link className="result-link"
 									key={index}
 									to={recipe.title}
 									state={{
 										instructions: recipe.instructions,
 										ingredients: recipe.ingredients,
 									}}>
-									<RecipeResult title={recipe.title} />
+									<RecipeResult title={recipe.title}/>
 								</Link>
-						  ))
+						))
 						: null}
 				</article>
 			</section>

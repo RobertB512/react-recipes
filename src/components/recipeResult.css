@@ -1,0 +1,33 @@
+.result-link {
+  color: #960014;
+  border: 10px solid #9FA8DF;
+  background-color: #FFE5DC;
+  height: 40rem;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.recipe-result {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.result-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.heading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+}
+.result-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #960014;
+}

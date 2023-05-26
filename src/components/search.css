@@ -1,0 +1,13 @@
+form, .search-area {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.recipe-search {
+  font-size: clamp(2rem, 3rem, 4rem);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  width: clamp(200px, 500px, 100%);
+}

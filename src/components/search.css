@@ -11,3 +11,9 @@ form, .search-area {
   border-radius: 5px;
   width: clamp(200px, 500px, 100%);
 }
+
+@media (min-width: 900px) {
+  form, .search-area {
+    justify-content: flex-start;;
+  }
+}

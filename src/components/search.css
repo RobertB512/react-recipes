@@ -5,16 +5,45 @@ form, .search-area {
   width: 100%;
 }
 
-.recipe-search {
-  font-size: clamp(2rem, 3rem, 4rem);
+.recipe-search, .search-btn {
+  font-size: 3rem;
   padding: 5px 10px;
+}
+
+.recipe-search {
+  /* font-size: clamp(2rem, 3rem, 4rem);; */
   border: none;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   width: clamp(200px, 500px, 100%);
+}
+.search-btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .search-explanation {
   max-width: 600px;
+  text-align: center;
+}
+
+@media(min-width: 575px) {
+  .search-control {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .recipe-search {
+    border-radius: 5px 0 0 5px;
+  }
+  .search-btn {
+    border-radius: 0 5px 5px 0;
+    width: fit-content;
+    margin-bottom: 0;
+  }
+
 }
 
 @media (min-width: 900px) {

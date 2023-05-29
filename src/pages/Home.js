@@ -44,7 +44,7 @@ export default function Home() {
 	}, [searchedRecipe]);
 
 	const getRecipeQuery = e => {
-		setSearchedRecipe(e.target.value);
+		setSearchedRecipe(e.target.search.value);
 	};
 
 	return (
@@ -52,7 +52,7 @@ export default function Home() {
 			<header>
 				<h1>Recipes for You</h1>
 
-				<Search value={searchedRecipe} handleQuery={getRecipeQuery} />
+				<Search handleQuery={getRecipeQuery} />
 			</header>
 
 			<section className="results-container">

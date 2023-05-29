@@ -1,5 +1,6 @@
 form, .search-area {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
 }
@@ -10,6 +11,10 @@ form, .search-area {
   border: none;
   border-radius: 5px;
   width: clamp(200px, 500px, 100%);
+}
+
+.search-explanation {
+  max-width: 600px;
 }
 
 @media (min-width: 900px) {

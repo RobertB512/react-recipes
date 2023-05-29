@@ -20,10 +20,10 @@ header {
   margin-right: 0.2rem;
 }
 
-back-link:hover {
+.back-link:hover {
   text-decoration: underline;
 }
-back-link:active {
+.back-link:active {
   text-decoration: none;
 }
 .recipe-img-wrapper {

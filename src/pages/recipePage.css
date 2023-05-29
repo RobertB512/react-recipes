@@ -33,10 +33,25 @@ header {
 .recipe-image {
   width: 30rem;
   height: auto;
+  margin-bottom: 40px;
+}
+
+.recipe-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cross-out-explanation {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  max-width: 300px;
 }
 
 .recipe-info-wrapper, .info-container {
-  padding: 20px;
+  padding: 0 20px;
 }
 .ingredient-container {
   border-bottom: 3px solid #A9685E;
@@ -48,12 +63,17 @@ header {
   font-size: 4rem;
 }
 
+.complete {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 @media(min-width: 720px) {
   .recipe-info-wrapper {
     display: flex;
   }
   .recipe-info-wrapper {
-    padding: 30px;
+    padding: 0 30px;
   }
 
   .ingredient-container {

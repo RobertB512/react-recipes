@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
+import "./recipePage.css"
+import image from "../assets/placeholderImg.png"
+
 
 export default function RecipePage(props) {
 	const { chosenRecipe } = useParams();
@@ -15,11 +18,11 @@ export default function RecipePage(props) {
 			</header>
 
 			<div className="recipe-img-wrapper">
-				<img src="" alt="" />
+				<img className="recipe-image" src={image} alt="placeholder" />
 			</div>
 
 			<div className="recipe-info-wrapper">
-				<section className="info-container ingredients-container">
+				<section className="info-container ingredient-container">
 					<h3 className="recipe-info-heading">Ingredients</h3>
 
 					<div className="ingredients-wrapper">

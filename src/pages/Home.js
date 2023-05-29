@@ -15,7 +15,7 @@ export default function Home() {
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": `{{api-key}}`,
+				"X-RapidAPI-Key": `cc06321dd2mshae2ef3bf31d5247p1789c2jsn25cfe043fcab`,
 				"X-RapidAPI-Host": "recipe-by-api-ninjas.p.rapidapi.com",
 				"Cache-Control": "no-cache",
 			},

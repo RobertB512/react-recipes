@@ -4,6 +4,10 @@
   padding: 15px;
   border-radius: 10px;
   text-decoration: none;
+  transition: 0.3s;
+}
+.result-link:hover {
+  transform: scale(1.25);
 }
 
 .recipe-result {

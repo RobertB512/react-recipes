@@ -21,7 +21,7 @@ h1 {
   --result-columns: 1; 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 @media (min-width: 650px) {

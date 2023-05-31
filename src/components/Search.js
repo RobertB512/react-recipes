@@ -22,7 +22,7 @@ export default function Search({handleQuery }) {
 					</button>
 				</div>
 				<p className="search-explanation">
-					A maximum of 10 recipes will be shown. If your can't find what you're
+					A maximum of 15 recipes will be shown. If your can't find what you're
 					lookin for, try a more specific search.
 				</p>
 			</form>

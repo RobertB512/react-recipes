@@ -10,14 +10,13 @@ export default function Home() {
 	const [recipeResults, setRecipeResults] = useState([]);
 
 	useEffect(() => {
-		const url = `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${searchedRecipe}`;
+		const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchedRecipe}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&number=15&limitLicense=true`;
 
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": `{{api-key}}`,
-				"X-RapidAPI-Host": "recipe-by-api-ninjas.p.rapidapi.com",
-				"Cache-Control": "no-cache",
+				"x-api-key": `{{api-key goes here}}`,
+        "cache-control": "no-store"
 			},
 		};
 
@@ -37,8 +36,10 @@ export default function Home() {
 							console.log("May be 403 (forbidden). Did you put in api key?");
 						}
 					})
-					.then(recipes => setRecipeResults(recipes))
-					.catch(error => console.log("could not fetch data"));
+					.then(recipes => {
+						setRecipeResults(recipes.results);
+					})
+					.catch(error => console.log(error));
 			} catch (error) {
 				console.log("Error: did you put in an api key?");
 			}
@@ -69,16 +70,18 @@ export default function Home() {
 				</h2>
 				<article className="results-wrapper">
 					{recipeResults && searchedRecipe !== ""
-						? recipeResults.map((recipe, index) => (
+						? recipeResults.map((recipe, index) => ( 
 								<Link
 									className="result-link"
 									key={index}
 									to={recipe.title}
 									state={{
-										instructions: recipe.instructions,
-										ingredients: recipe.ingredients,
+										instructions: recipe.analyzedInstructions,
+										ingredients: recipe.extendedIngredients,
+										image: recipe.image,
+                    source: recipe.sourceUrl,
 									}}>
-									<RecipeResult title={recipe.title} />
+									<RecipeResult title={recipe.title} image={recipe.image} />
 								</Link>
 						  ))
 						: null}

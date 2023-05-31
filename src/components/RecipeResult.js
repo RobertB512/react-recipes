@@ -1,11 +1,10 @@
 import React from "react";
 import "./recipeResult.css";
-import recipeImage from "../assets/placeholderImg.png";
 
-export default function RecipeResult({title}) {
+export default function RecipeResult({title, image}) {
 	return (
 		<div className="recipe-result">
-			<img className="result-img" src={recipeImage} alt="placeholder cupcake" />
+			<img className="result-img" src={image} alt={title} />
 			<div className="heading-wrapper">
 				<h2 className="result-heading">{title}</h2>
 			</div>

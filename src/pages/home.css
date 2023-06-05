@@ -2,7 +2,6 @@ h1 {
   font-size: clamp(3rem, 5rem, 7rem);
   font-weight: 700;
   text-align: center;
-  /* color: #ffd700; */
 }
 
 .results-container {
@@ -12,7 +11,7 @@ h1 {
   text-align: center;
   font-size: 4rem;
   margin-bottom: 20px;
-  color: #960014;
+  color: #1B3D2F;
 
 }
 .results-wrapper {
@@ -24,25 +23,12 @@ h1 {
   margin-bottom: 40px;
 }
 
-.result-link {
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.result-link:hover {
-  transform: scale(1.25);
-}
-
 @media (min-width: 650px) {
   .results-heading {
     text-align: left;
   }
 }
-/* @media(min-width: 700px) {
-  .results-wrapper {
-    justify-content: start;
-  }
-} */
+
 @media (min-width: 900px) {
   h1 {
     text-align: left;

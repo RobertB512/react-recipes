@@ -4,6 +4,14 @@
   flex-direction: column;
   height: 100%;
 }
+.result-link {
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.result-link:hover {
+  transform: scale(1.25);
+}
 .result-img {
   width: 100%;
   height: auto;

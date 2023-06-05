@@ -1,7 +1,7 @@
 import React from "react";
 import "./search.css";
 
-export default function Search({handleQuery }) {
+export default function Search({handleQuery, numberOfResults }) {
 	const handleSearch = e => {
     e.preventDefault();
 		handleQuery(e);
@@ -22,7 +22,7 @@ export default function Search({handleQuery }) {
 					</button>
 				</div>
 				<p className="search-explanation">
-					A maximum of 15 recipes will be shown. If your can't find what you're
+					A maximum of {numberOfResults} recipes will be shown. If your can't find what you're
 					looking for, try a more specific search.
 				</p>
 			</form>

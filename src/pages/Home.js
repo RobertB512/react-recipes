@@ -9,8 +9,10 @@ export default function Home() {
 	const [searchedRecipe, setSearchedRecipe] = useState("");
 	const [recipeResults, setRecipeResults] = useState([]);
 
+  const numberOfResults = 20;
+
 	useEffect(() => {
-		const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchedRecipe}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&number=15&limitLicense=true`;
+		const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchedRecipe}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&number=${numberOfResults}&limitLicense=true`;
 
 		const options = {
 			method: "GET",
@@ -55,7 +57,7 @@ export default function Home() {
 			<header>
 				<h1>Recipes for You</h1>
 
-				<Search handleQuery={getRecipeQuery} />
+				<Search handleQuery={getRecipeQuery} numberOfResults={numberOfResults} />
 			</header>
 
 			<section className="results-container">

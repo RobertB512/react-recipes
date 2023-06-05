@@ -17,12 +17,22 @@ form, .search-area {
   width: clamp(200px, 500px, 100%);
 }
 .search-btn {
-  background-color: blue;
-  color: white;
+  background-color: #9F8F65;
+  color: #FFF9E6;
   border: none;
   border-radius: 0 0 5px 5px;
   width: 100%;
   margin-bottom: 20px;
+  font-weight: 700;
+}
+.search-btn:hover {
+  cursor: pointer;
+  background-color: #FFD700;
+  color: #9F8F65;
+}
+.search-btn:active {
+  background-color: #9F8F65;
+  color: #FFF9E6;
 }
 
 .search-explanation {

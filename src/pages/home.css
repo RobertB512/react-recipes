@@ -2,9 +2,7 @@ h1 {
   font-size: clamp(3rem, 5rem, 7rem);
   font-weight: 700;
   text-align: center;
-}
-.results-heading {
-  font-size: 2rem;
+  /* color: #ffd700; */
 }
 
 .results-container {
@@ -20,9 +18,19 @@ h1 {
 .results-wrapper {
   --result-columns: 1; 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
   grid-gap: 20px;
+  justify-content: center;
   margin-bottom: 40px;
+}
+
+.result-link {
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.result-link:hover {
+  transform: scale(1.25);
 }
 
 @media (min-width: 650px) {
@@ -30,6 +38,11 @@ h1 {
     text-align: left;
   }
 }
+/* @media(min-width: 700px) {
+  .results-wrapper {
+    justify-content: start;
+  }
+} */
 @media (min-width: 900px) {
   h1 {
     text-align: left;

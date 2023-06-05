@@ -8,14 +8,13 @@
 html {
   font-size: 62.5%;
 }
-
 header {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 4rem;
-  background-color: #A9685E;
-  color: #FFE5DC;
+  background-color: #1B3D2F;
+  color: #FFF9E6;
   width: 100%;
 }
 

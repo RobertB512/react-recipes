@@ -1,16 +1,5 @@
-.result-link {
-  color: #960014;
-  background-color: #FFE5DC;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.3s;
-  max-width: 30rem;
-}
-.result-link:hover {
-  transform: scale(1.25);
-}
-
 .recipe-result {
+  background-color: #FFF9E6;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -31,5 +20,5 @@
 .result-heading {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #960014;
+  color: #1B3D2F;
 }

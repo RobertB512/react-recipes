@@ -9,41 +9,26 @@ export default function Home() {
 	const [searchedRecipe, setSearchedRecipe] = useState("");
 	const [recipeResults, setRecipeResults] = useState([]);
 
-  const numberOfResults = 20;
+	const numberOfResults = 20;
 
 	useEffect(() => {
-		const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchedRecipe}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&number=${numberOfResults}&limitLicense=true`;
+		const url = `/api?query=${searchedRecipe}`;
 
-		const options = {
-			method: "GET",
-			headers: {
-				"x-api-key": `{{api-key goes here}}`,
-        "cache-control": "no-store"
-			},
-		};
+		// const options = {
+		// 	method: "GET",
+		// 	headers: {
+		// 		"x-api-key": `{{api-key goes here}}`,
+		//     "cache-control": "no-store"
+		// 	},
+		// };
 
 		if (searchedRecipe) {
 			try {
-				fetch(url, options)
-					.then(response => {
-						try {
-							if (response.ok) {
-								return response.json();
-							} else {
-								console.log(
-									"Error, you might need an api key. Make sure the api key, url, and headers are valid."
-								);
-							}
-						} catch (error) {
-							console.log("May be 403 (forbidden). Did you put in api key?");
-						}
-					})
-					.then(recipes => {
-						setRecipeResults(recipes.results);
-					})
-					.catch(error => console.log(error));
+				fetch(url, {headers: {"cache-control": "no-store"}})
+					.then(response => response.json())
+					.then(data => setRecipeResults(data));
 			} catch (error) {
-				console.log("Error: did you put in an api key?");
+				console.log(error);
 			}
 		}
 	}, [searchedRecipe]);
@@ -57,7 +42,10 @@ export default function Home() {
 			<header>
 				<h1>Recipes for You</h1>
 
-				<Search handleQuery={getRecipeQuery} numberOfResults={numberOfResults} />
+				<Search
+					handleQuery={getRecipeQuery}
+					numberOfResults={numberOfResults}
+				/>
 			</header>
 
 			<section className="results-container">
@@ -72,7 +60,7 @@ export default function Home() {
 				</h2>
 				<article className="results-wrapper">
 					{recipeResults && searchedRecipe !== ""
-						? recipeResults.map((recipe, index) => ( 
+						? recipeResults.map((recipe, index) => (
 								<Link
 									className="result-link"
 									key={index}
@@ -81,7 +69,7 @@ export default function Home() {
 										instructions: recipe.analyzedInstructions,
 										ingredients: recipe.extendedIngredients,
 										image: recipe.image,
-                    source: recipe.sourceUrl,
+										source: recipe.sourceUrl,
 									}}>
 									<RecipeResult title={recipe.title} image={recipe.image} />
 								</Link>

@@ -8,11 +8,12 @@ import RecipeResult from "../components/RecipeResult";
 export default function Home() {
 	const [searchedRecipe, setSearchedRecipe] = useState("");
 	const [recipeResults, setRecipeResults] = useState([]);
+  // const [query, setQuery] = useState("hamburger")
 
 	const numberOfResults = 20;
 
 	useEffect(() => {
-		const url = `/api?query=${searchedRecipe}`;
+		const url = `http://localhost:5000/recipes/${searchedRecipe}`;
 
 		// const options = {
 		// 	method: "GET",
@@ -26,7 +27,7 @@ export default function Home() {
 			try {
 				fetch(url, {headers: {"cache-control": "no-store"}})
 					.then(response => response.json())
-					.then(data => setRecipeResults(data));
+					.then(data => setRecipeResults(data.results));
 			} catch (error) {
 				console.log(error);
 			}

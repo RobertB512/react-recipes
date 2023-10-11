@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "//robertb512.github.io%7D/%7Breact-recipes%7D/static/css/main.0e6b8de3.css",
+    "main.js": "//robertb512.github.io%7D/%7Breact-recipes%7D/static/js/main.ce8ff8de.js",
+    "index.html": "//robertb512.github.io%7D/%7Breact-recipes%7D/index.html",
+    "main.0e6b8de3.css.map": "//robertb512.github.io%7D/%7Breact-recipes%7D/static/css/main.0e6b8de3.css.map",
+    "main.ce8ff8de.js.map": "//robertb512.github.io%7D/%7Breact-recipes%7D/static/js/main.ce8ff8de.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e6b8de3.css",
+    "static/js/main.ce8ff8de.js"
+  ]
+}

@@ -2,6 +2,7 @@
   "name": "react-recipes",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://{https://robertb512.github.io}/{react-recipes}/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +12,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-rate-limit": "^6.9.0",
+    "gh-pages": "^6.0.0",
     "needle": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,6 +26,8 @@
     "start-server": "node server",
     "start-dev-server": "nodemon server",
     "start-app": "npm run start-server & npm run start-client",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d build", 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

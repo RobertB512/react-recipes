@@ -10,7 +10,7 @@
   transition: 0.3s;
 }
 .result-link:hover {
-  transform: scale(1.25);
+  transform: scale(0.85);
 }
 .result-img {
   width: 100%;

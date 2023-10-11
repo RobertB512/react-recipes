@@ -20,8 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-client": "npm run start",
     "start-server": "node server",
     "start-dev-server": "nodemon server",
+    "start-app": "npm run start-server & npm run start-client",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

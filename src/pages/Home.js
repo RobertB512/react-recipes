@@ -8,24 +8,23 @@ import RecipeResult from "../components/RecipeResult";
 export default function Home() {
 	const [searchedRecipe, setSearchedRecipe] = useState("");
 	const [recipeResults, setRecipeResults] = useState([]);
-  // const [query, setQuery] = useState("hamburger")
 
 	const numberOfResults = 20;
 
 	useEffect(() => {
-		const url = `http://localhost:5000/recipes/${searchedRecipe}`;
+		const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchedRecipe}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&number=15&limitLicense=true`;
 
-		// const options = {
-		// 	method: "GET",
-		// 	headers: {
-		// 		"x-api-key": `{{api-key goes here}}`,
-		//     "cache-control": "no-store"
-		// 	},
-		// };
+		const options = {
+			method: "GET",
+			headers: {
+				"x-api-key": `api-key goes here, errace this text first`,
+				"cache-control": "no-store",
+			},
+		};
 
 		if (searchedRecipe) {
 			try {
-				fetch(url, {headers: {"cache-control": "no-store"}})
+				fetch(url, options)
 					.then(response => response.json())
 					.then(data => setRecipeResults(data.results));
 			} catch (error) {
